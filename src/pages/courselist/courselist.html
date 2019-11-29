@@ -1,0 +1,27 @@
+<!--
+  Generated template for the CourselistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>课程列表</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let c of cl" >
+           <p>{{c.name}}</p>
+          <h2>{{c.classroom}}</h2>
+          <h3>{{c.student}}</h3>
+          <p>{{c.teacher}}</p>
+          <p>{{c.cid | coursenum}}</p>
+        </ion-item>
+      </ion-list>
+
+
+
+
+</ion-content>

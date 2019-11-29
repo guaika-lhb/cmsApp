@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      课程表
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<!-- <ion-content padding>
+    <ion-card>
+
+        <ion-card-header>
+          卡片头部
+        </ion-card-header>
+      
+        <ion-card-content>
+         <p>卡片内容</p>
+         <button ion-button>显示</button>
+
+         <button ion-button color="secondary" outline (click)="presentLoading()">加载框</button>
+        </ion-card-content>
+      
+      </ion-card>
+
+</ion-content> -->
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>课程</ion-label>
+      <ion-select [(ngModel)]="bookstr">
+        <ion-option value="{{b.id}}" *ngFor="let b of bl">{{b.name}}</ion-option>
+        
+      </ion-select>
+    </ion-item>
+
+
+    <ion-item>
+        <ion-label>教师</ion-label>
+        <ion-select [(ngModel)]="teacherstr">
+            <ion-option value="{{h.name}}" *ngFor="let h of hl">{{h.name}}</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>教室</ion-label>
+          <ion-select [(ngModel)]="classroomstr">
+              <ion-option value="{{r.name}}" *ngFor="let r of rl">{{r.name}}</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>班级</ion-label>
+            <ion-select [(ngModel)]="studentstr">
+                <ion-option value="{{s.name}}" *ngFor="let s of sl">{{s.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+
+
+
+  </ion-list>
+
+
+
+  <button ion-button full (click)="queryFromServer()">查询</button>
+
+
+</ion-content>

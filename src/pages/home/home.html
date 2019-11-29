@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>民大资讯</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+    <ion-slides autoplay="2000" loop="true" *ngIf="cl.length>0">
+        <ion-slide  *ngFor="let c of cl" (click)="goToCarouselDetail(c)">
+            <!-- <img src="{{PICHOST}}{{c.pic}}"/> -->
+            <img [src]="c.pic" alt="Random first slide">
+            <div class="cover"></div>
+            <span class="title">{{c.content}}</span>
+          </ion-slide>
+        
+      </ion-slides>
+
+
+      <ion-list>
+        <ion-item *ngFor="let n of n1" (click)="goToNewsDetail(n)">
+          <ion-thumbnail item-start>
+            <img src="{{PICHOST}}{{n.coverpic}}">
+          </ion-thumbnail>
+          <h2>{{n.title}}</h2>
+          <p>摘要</p>
+          
+        </ion-item>
+      </ion-list>
+
+    
+</ion-content>
